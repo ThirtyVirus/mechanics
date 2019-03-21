@@ -1,0 +1,135 @@
+commit cd745f3645e312b279020779e822ada6a4e68a14
+Author: Brandon Michael Calabrese <bmc1340@cs.rit.edu>
+Date:   Sat Dec 8 20:20:42 2018 -0500
+
+    I finished the input config error testing, and am ready for submission.
+
+commit e6e90011087a0143004971295c4d9c1593eba0f5
+Author: Brandon Michael Calabrese <bmc1340@cs.rit.edu>
+Date:   Sat Dec 8 18:06:06 2018 -0500
+
+    Almost ready for submission, all that is left is fixing some occasional screen garbling (very rare) 
+    and handling config errors. Should be a peice of cake in 6 hours time. I removed most magic values, 
+    and cleaned up the new documentation for the new version of the program. If I submitted right now I 
+    would probably get a 85 - 90%. Time to go for the perfect score!
+
+commit b567d9d3c7193404a521ea0ab0b6562a0264b582
+Author: Brandon Michael Calabrese <bmc1340@cs.rit.edu>
+Date:   Fri Dec 7 13:32:25 2018 -0500
+
+    I had a talk with the professor regarding the project and I discovered that the end goal of the project 
+    is not a similarly functioning space invadors game, but a test ofthe ability to work with threads.
+    After discovering this, I heavily modified the project to work in the preffered way shown in the 
+    diagrams on the project page. Now there is a defense thread, an attacker thread, and the attacker 
+    thread spawns missile threads in waves. I removed many of the global variables, as well as the display 
+    loop. At the present Ihave a *mostly* working correct implimentation of the project. There is occasional 
+    garbling of data, suggesting that I forgot a mutex somewhere. In the redesign I was able to properly 
+    process the quit / end game features
+
+commit f3ceb12e338f3e4ba945a5208a0748026a285f7b
+Author: Brandon Michael Calabrese <bmc1340@cs.rit.edu>
+Date:   Tue Dec 4 00:12:06 2018 -0500
+
+    I found a hacky solution to my display / controls problem. I found out that by setting timeout(1); 
+    in my initialize function, I can make it so the program continues to run even if there is no input 
+    for getch(). This is useful because I can run a standard game loop and simply check for input at any 
+    time and not be stopped. To keep with the requirements for the project though, I will put input in its 
+    own thread (even though my solution doesn't need me to). Should be around 2-3 hours of work away from 
+    the final product!
+
+commit c81b2c2e83eb1884c160597092a840f1a38873ee
+Author: Brandon Michael Calabrese <bmc1340@cs.rit.edu>
+Date:   Mon Dec 3 22:42:43 2018 -0500
+
+    I made a breakthrough! The program kinda displays properly now, and even updates without having 
+    to move! The problem is, it still glitches pretty constantly, just less often than before. This 
+    was the result of having two mutex's and by adding refresh() at the end of my display function. 
+    Going to continue adding random crap until it stops glitching.
+
+commit 129054317ac83e17f8fdda40831a759d97241b1c
+Author: Brandon Michael Calabrese <bmc1340@cs.rit.edu>
+Date:   Mon Dec 3 22:08:23 2018 -0500
+
+    Got some advice from a classmate and the professor and using mutex did not help the situation. 
+    My output is still garbled. Pretty fruistrated at the moment
+
+commit 88d8aeaa70f7143354f0ccc5516f7843faa5ade9
+Author: Brandon Michael Calabrese <bmc1340@cs.rit.edu>
+Date:   Mon Dec 3 12:25:08 2018 -0500
+
+    Updated the code some more. Still stuck on making the display loop work alongside the user 
+    input. I posted on the discussion forums regarding getch() with multithreaded ncurses, as 
+    this seems to be a limitation of ncurses and I somehow need to impliment a mutex. In the mean 
+    time, I made it so the paddle can block missles, smoke appears in the spot where the missle was 
+    deflected. I also made the city size fit to the screen if it is too small. All that is left 
+    other than my display loop problem is cleaning up the code and imlementing the missle limit 
+    / quit sequence.
+
+commit 2fb7c04bdf97571bd9e87896e9abd1b993fedb14
+Author: Brandon Michael Calabrese <bmc1340@cs.rit.edu>
+Date:   Mon Dec 3 10:04:46 2018 -0500
+
+    I made huge progress with threads. I successfully managed to get the
+    missles to spawn in and slowly destroy the landscape. Next, I need to
+    make a seperate thread for the display (I tried this once but it garbled
+    my output). Once I do that, the final changes before submission are in
+    order.
+
+commit 2472b91301a5fce4dfffe9a5ae935dd6f7a4735a
+Author: Brandon Michael Calabrese <bmc1340@cs.rit.edu>
+Date:   Sun Dec 2 20:02:56 2018 -0500
+
+    I somewhat finished the drawing code for the landscape, paddle, and have placeholders for 
+    the missles and damaged spots. Unfortunately I ran into an annoying snag with ncurses where 
+    the thing refuses to draw more than 5 of the same character in a row. This made the bottom line 
+    of the display messed up, so I opted to just not draw the ground for now (until I can have a 
+    talk with the professor as to how to fix it). Next up, threads! My next goal is to declare a 
+    list of threads for the missles, and be able to incorperate the random drop times as well as 
+    the display on the screen. If I am extra ambitious I may also add the controls for the paddle
+
+commit f276ab92e54d850ed65a04048953dd422cd07ba5
+Author: Brandon Michael Calabrese <bmc1340@cs.rit.edu>
+Date:   Sun Dec 2 18:40:45 2018 -0500
+
+    I have a lot of the display portion of the project done. I made a neat little algorithm that 
+    draws the buildings in a nice looking way each game tick. I made the design choice to re-aquire 
+    the screen size each game tick such that the user changing window size doesn't ruin the game. 
+    Additionally, I made the choice to clear the board between game ticks and start drawing over, 
+    to get rid of some of the quirks with the example application. At the moment I am struggling 
+    to draw the ground under the buildings, but when I get that worked out I will begin storing 
+    locations for the places hit by missles and draw those as well during the game loop. I predict 
+    by the end of the night that everything other than multi-threading will be up and running!
+
+commit 41aa919f5e0d53077b7f9486b9f30c7d004f001a
+Author: Brandon Michael Calabrese <bmc1340@cs.rit.edu>
+Date:   Sun Dec 2 17:02:26 2018 -0500
+
+    Made my first attempt at curses, so far so good. For testing purposes I have configured 
+    it to exit when I press Enter, so I can prevent the problem I had in the previous assignment 
+    with curses where my terminal would be disabled until I restart it. Next I will try and draw 
+    the city landscape as well as define variables for things such as the paddle and draw them as 
+    well. I think the threading will be the last task for the project.
+
+commit 752d5022d436664caeef30200bc7ff35b5c7f1eb
+Author: Brandon Michael Calabrese <bmc1340@cs.rit.edu>
+Date:   Sun Dec 2 15:24:09 2018 -0500
+
+    Added some more features to file reading, now can get any number of city layout 
+    numbers from any length of row and any amount of rows. Pretty proud of my creation 
+    of the 'safeAdd()' function to make the process almost as simple as making an ArrayList 
+    in java. ALMOST
+
+commit e51cf0310d5106dda1e4dcbdc1422b9126c3737e
+Author: Brandon Michael Calabrese <bmc1340@cs.rit.edu>
+Date:   Sun Dec 2 14:41:22 2018 -0500
+
+    I was able to correctly interpet the defenceForce, attackForce, 
+    and max missles from the text file. Still wrapping my head around 
+    the way the threads need to be organized, Thinking about finishing 
+    IO before I begin that proccess
+
+commit 3238ec89c606c2d6ab7811365c87a2edfb787c6d
+Author: Brandon Michael Calabrese <bmc1340@cs.rit.edu>
+Date:   Sun Dec 2 13:14:59 2018 -0500
+
+    Initial checkin

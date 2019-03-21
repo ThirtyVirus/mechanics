@@ -1,0 +1,65 @@
+commit d1cf8a56848642efb8667fb2db5af917c81bb66c
+Author: Brandon Michael Calabrese <bmc1340@cs.rit.edu>
+Date:   Wed Nov 28 21:37:13 2018 -0500
+
+    I completed the file reading portion of the homework. It was easier than
+    expected; all I had to do was make a char* holding all the data from the
+    file, then call set_encode and free the char* afterwards. I have
+    verified that all the try cases match, and am ready for submission.
+    (It's about time I didn't screw one of these up, right?)
+
+commit 02f372e4f2640d6a202ca174006545b204c30a67
+Author: Brandon Michael Calabrese <bmc1340@cs.rit.edu>
+Date:   Wed Nov 28 21:13:44 2018 -0500
+
+    Almost complete! I updated main to properly call the correct function
+    when the requested file is present. Again the last step is properly
+    reading the bytes from the file. The last step is properly constructing
+    the set. So close!
+
+commit ea68756ca928b84bd677cb327164cf7c591b806f
+Author: Brandon Michael Calabrese <bmc1340@cs.rit.edu>
+Date:   Wed Nov 28 19:13:55 2018 -0500
+
+    I wrote the documentation for the program and fixed a minor bug that
+    made the program not properly ignore characters that are not supported.
+    I also got rid of some magic numbers (64 and 63) and replaced them with
+    references to the constants at the top of the file. I tested my program
+    with every example except for the one dealing with a file and all
+    checked out. The final battle is IO. Wish me luck.
+
+commit 970f84047ab1300f326dbf1bb260ca184091d305
+Author: Brandon Michael Calabrese <bmc1340@cs.rit.edu>
+Date:   Wed Nov 28 18:42:10 2018 -0500
+
+    The program is basically finished minus documentation and dealing with
+    the file stuff. Not looking forward to IO, always manages to screw me
+    up. I fixed a memory issue with displaying the data in the set after it
+    has been processed vis replacing a malloc with a calloc. See you on the
+    other side!
+
+commit 18218158ae1e04f6bd7772491b62f50c888161f1
+Author: Brandon Michael Calabrese <bmc1340@cs.rit.edu>
+Date:   Wed Nov 28 00:29:43 2018 -0500
+
+    I finished the implimentation of the main functions somehow. All that is
+    left is getting input from a file and documentation (and probably a few
+    other things from the writeup that I haven't seen yet). I will see you
+    on the other side!
+
+commit 50934289afd4d6e2c099cb022d718e8b82d6f44e
+Author: Brandon Michael Calabrese <bmc1340@cs.rit.edu>
+Date:   Tue Nov 27 23:54:33 2018 -0500
+
+    I figured out the proper way to convert a string to the preffered set
+    data type. With that, I should be able to quickly impliment the other
+    functions. Wish me luck.
+
+commit d67c59b200fe7a2dc749fa6f356448135e0db0aa
+Author: Brandon Michael Calabrese <bmc1340@cs.rit.edu>
+Date:   Tue Nov 27 20:40:33 2018 -0500
+
+    I made the initial skeleton of the program, as well as properly
+    formatted output using dummy values. In my next commit I should have
+    proper documentation and my first attempt at implimentation for the
+    large number of functions at the top of my file.

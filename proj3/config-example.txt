@@ -1,0 +1,19 @@
+# defender first, attacker second
+Abraham Lincoln
+Stephen Douglass
+# max missiles >= 0. 0 means an infinite missile battle.
+0
+# cityscape: next comment line is for human convenience
+# 1 2 3 4 5 6 7 8 9 # each row is 10 characters of layout specification
+2 2 2 2 2 2 2 2 2 2
+2 2 6 6 7 7 7 5 5 2
+2 2 2 2 2 2 2 2 2 2
+8 8 8 6 6 6 9 9 9 2
+2 2 2 2 2 2 2 2 2 2
+10 10 10 4 4 4 9 9 9 2
+2 2 2 2 2 2 2 2 2 2
+3 3 3 6 6 6 9 9 9 2
+2 2 2 2 2 2 2 2 2 2
+3 3 3 6 6 6 9 9 9 2
+2 2 2 2 2 2 2 2 2 2
+
